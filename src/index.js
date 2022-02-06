@@ -22,15 +22,9 @@ class App extends React.Component {
     console.log('My component was just updated - it rerendered')
   }
 
-  //React says we have to define render!!!
-  //Only to return jsx NOTHING ELSE
-  render() {
+  renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
-      return (
-        <div>
-          Error: {this.state.errorMessage}
-        </div>
-      );
+      return <div>Error: {this.state.errorMessage}</div>;
     }
 
     if (!this.state.errorMessage && this.state.lat) {
@@ -38,6 +32,16 @@ class App extends React.Component {
     }
 
     return <Spinner text='Please accept location request'/>;
+  }
+
+  //React says we have to define render!!!
+  //Only to return jsx NOTHING ELSE
+  render() {
+    return (
+      <div className='border red' >
+        {this.renderContent()}
+      </div>
+    );
   }
 }
 
