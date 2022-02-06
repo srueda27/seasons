@@ -3,14 +3,7 @@ import ReactDOM from 'react-dom';
 import SeasonDisplay from './components/SeasonDisplay';
 
 class App extends React.Component {
-  //Optional method, runs firts when the component is being created
-  //Allows us to initialize state
-  constructor(props) {
-    super(props);
-
-    // THIS IS THE ONLY TIME we do direct assignment to this.state
-    this.state = { lat: null, errorMessage: '' };
-  }
+  state = { lat: null, errorMessage: '' };
 
   //First time the render method is used
   componentDidMount() {
